@@ -18,7 +18,7 @@ class Movie {
 
 $cars = new Movie("Cars","John Lasseter", 2006);
 $frozen = new Movie("Frozen","Chris Buck & Jennifer Lee", 2013);
-
+$tarzan = new Movie("Tarzan","Chris Buck & Kevin Lima", 1999);
 
 
 ?>
