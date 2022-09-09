@@ -11,9 +11,12 @@ class Movie {
         $this->director = $director;
         $this->year = $year;
     }
+
+
     
-    public function printElements($quantità){
-        return "il film". $this->name. " è disponibile in {$quantità} unità";
+    public function printElements(){
+        $quantità = rand(0, 200);
+        return "Il film ". $this->name. " è disponibile in {$quantità} unità";
     }
 }
     
@@ -49,19 +52,19 @@ $movies = [$cars,$frozen,$tarzan];
         <ul class="movie">
             
             <li>
-                <?php echo $movie->name ; ?>
+                <h1> <?php echo $movie->name ; ?> </h1>
             </li>
                 
             <li>
-                <?php echo $movie->director ; ?>
+                <h3> <?php echo $movie->director ; ?> </h3>
             </li>
                 
             <li>
-                <?php echo $movie->year ; ?>
+               <div class="year"> <?php echo $movie->year ; ?> </div> 
             </li>
 
             <li>
-                <?php echo $movie->printElements(20); ?>
+               <span> <?php echo $movie->printElements(); ?> </span> 
             </li>
             
 
@@ -82,10 +85,22 @@ $movies = [$cars,$frozen,$tarzan];
 
     .movie{
         text-align: center;
-        margin: 100px;
+        margin: 50px auto;
         border: 1px solid black;
         list-style-type: none;
         padding: 3rem;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+    .year {
+        margin: 10px 0;
+    }
+
+    span{
+        font-weight: bolder;
     }
 
 </style>
