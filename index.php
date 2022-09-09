@@ -5,20 +5,25 @@ class Movie {
     public $name;
     public $director;
     public $year;
+
+    public function printElements(){
+        echo "il film". $this->name. "è disponibile in n quantità";
+    }
     
-    function __construct($name, $director, $year) {
+    function __construct($name, $director, $year, $function) {
         $this->name = $name;
         $this->director = $director;
         $this->year = $year;
+        $this->function = printElements();
     }
 }
     
 
 
 
-$cars = new Movie("Cars","John Lasseter", 2006);
-$frozen = new Movie("Frozen","Chris Buck & Jennifer Lee", 2013);
-$tarzan = new Movie("Tarzan","Chris Buck & Kevin Lima", 1999);
+$cars = new Movie("Cars","John Lasseter", 2006, printElements());
+$frozen = new Movie("Frozen","Chris Buck & Jennifer Lee", 2013, printElements());
+$tarzan = new Movie("Tarzan","Chris Buck & Kevin Lima", 1999, printElements());
 
 $movies = [$cars,$frozen,$tarzan];
 
@@ -55,6 +60,13 @@ $movies = [$cars,$frozen,$tarzan];
             <li>
                 <?php echo $movie->year ; ?>
             </li>
+
+            <li>
+                <?php echo $movie->$function; ?>
+            </li>
+            
+
+            
                 
         </ul>
     
